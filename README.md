@@ -1,4 +1,3 @@
-# PUMA-App-Hosting
 # PUMA Services Modernization & Migration Project
 
 ## Project Overview
@@ -6,6 +5,19 @@
 PUMA (Process Automation, Uncertainty Quantification, Modeling, and Analytics) Services is a critical platform providing quantitative analysts at NWRC (National Wildlife Research Center) with tools for code sharing, workflow automation, and hosting R Shiny applications and PostgreSQL databases.
 
 This project involved a significant modernization and migration effort for an existing, inherited PUMA services deployment.
+
+## System Description
+
+The PUMA services platform leverages Docker Compose to orchestrate a suite of integrated services designed to support quantitative analysts at the NWRC. This system facilitates enhanced collaboration, streamlined workflows, and centralized data management.
+
+Key capabilities provided by the platform include:
+
+* **Code Sharing & Version Control:** Powered by a dockerized **GitLab** instance, enabling secure and centralized code collaboration, versioning, and project management for analytical scripts and small datasets. Access is facilitated via HTTP for work computers.
+* **Workflow Automation:** Supported through GitLab's CI/CD pipelines with dockerized GitLab Runners, capable of watching pipelines and processing data. Additionally, traditional shell tools accessed via SSH allow users to manage locally shared files and automate tasks like data downloads, pre-processing, and automated reporting.
+* **Shiny Application Hosting:** Dockerized **Shiny Server** instances host interactive R Shiny applications, making analytical tools accessible via web URLs. Deployments are managed using GitLab's CI/CD tools, with each project potentially having its own Shiny Server instance and read access to dedicated public project files.
+* **Database Hosting:** A dockerized **PostgreSQL** server provides robust database hosting for various projects. It includes administrative interfaces (like pgAdmin) and is backed up via a scheduled GitLab CI/CD pipeline configured to access network storage for secure data retention.
+
+Many settings for the repository and services are historically tailored to the NWRC environment, with services accessed via internal DNS mappings (e.g., `http://aapcoftc0ap00.usda.net/gitlab`).
 
 ## My Role & Contributions
 
@@ -66,6 +78,6 @@ This repository contains the necessary Docker Compose configurations, Dockerfile
 
 * **Prerequisites:** A Linux server with Docker Engine and Docker Compose installed, along with appropriate host directory structures and permissions configured.
 * **Deployment:** Services are launched via a `startserver.sh` bash script utilizing `docker compose`.
-* **Access:** Services are accessible via NGINX reverse proxy through configured domain names (e.g., `http://<server_name>.usda.net/gitlab`, `http://<server_name>.usda.net/[project]/[app]`).
+* **Access:** Services are accessible via NGINX reverse proxy through configured domain names (e.g., `http://aapcoftc0ap02.usda.net/gitlab`, `http://aapcoftc0ap02.usda.net/[project]/[app]`).
 
 *(Note: For security and proprietary reasons, detailed internal deployment guides, specific application code, and sensitive configuration values are omitted from this public repository.)*
