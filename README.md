@@ -6,7 +6,7 @@ PUMA (Process Automation, Uncertainty Quantification, Modeling, and Analytics) S
 
 This project involved a significant modernization and migration effort for an existing, inherited PUMA services deployment.
 
-## Credit Where credit is due
+## Credit where credit is due
 
 Josh Hewitt was the original developer of the PUMA service and deserves all credit for its inital development.
 
