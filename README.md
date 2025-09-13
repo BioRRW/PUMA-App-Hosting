@@ -25,7 +25,7 @@ Many settings for the repository and services are historically tailored to the N
 
 ## My Role & Contributions
 
-As a [Your Role Here - e.g., DevOps Engineer, System Administrator, Infrastructure Lead], I was responsible for the end-to-end management, enhancement, and migration of the PUMA services.
+As a Data scientist, I was responsible for the end-to-end management, enhancement, and migration of the PUMA services.
 
 ### Phase 1: Pre-Migration Enhancements & Troubleshooting (Inherited System)
 
